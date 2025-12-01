@@ -48,7 +48,7 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
     }
 })();
 
-/* ---------- Projects clickable cards (Step 3) ---------- */
+/* ---------- Make project cards clickable (Step 2) ---------- */   
 (function projectsClickable() {
     const cards = $$('.project-card');
     cards.forEach(card => {
@@ -65,14 +65,12 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
     });
 })();
 
-/* ---------- Contact form handling with localStorage + validation + redirect (Step 2) ---------- */
 (function contactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
     const feedback = document.getElementById('form-feedback');
 
     function isValidEmail(email) {
-        // simple, robust regex for validation (not perfect but fine for coursework)
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
